@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetCheck", "VetCheck.csproj", "{C7EF18E1-FB7C-4CF8-915D-1AA3020118CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7EF18E1-FB7C-4CF8-915D-1AA3020118CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7EF18E1-FB7C-4CF8-915D-1AA3020118CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7EF18E1-FB7C-4CF8-915D-1AA3020118CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7EF18E1-FB7C-4CF8-915D-1AA3020118CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3438776-C001-4FA8-92E6-5CE2D82822C5}
+	EndGlobalSection
+EndGlobal

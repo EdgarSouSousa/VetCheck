@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.newOwner = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // txtAnimalID
@@ -142,11 +143,23 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Taxa";
             // 
+            // newOwner
+            // 
+            this.newOwner.AutoSize = true;
+            this.newOwner.Location = new System.Drawing.Point(451, 95);
+            this.newOwner.Name = "newOwner";
+            this.newOwner.Size = new System.Drawing.Size(68, 15);
+            this.newOwner.TabIndex = 12;
+            this.newOwner.TabStop = true;
+            this.newOwner.Text = "Novo Dono";
+            this.newOwner.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newOwner_LinkClicked);
+            // 
             // Adoption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.newOwner);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -180,5 +193,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
+        private LinkLabel newOwner;
     }
 }

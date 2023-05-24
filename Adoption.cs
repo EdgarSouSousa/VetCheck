@@ -87,5 +87,10 @@ namespace VetCheck
             }
         }
 
+        private void newOwner_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form ownerRegister= new ownerRegister();
+            ownerRegister.Show();
+        }
     }
 }

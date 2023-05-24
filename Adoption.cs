@@ -61,21 +61,25 @@ namespace VetCheck
                 int ownerID = int.Parse(txtOwnerID.Text);
                 int vetID = int.Parse(txtVetID.Text);
                 DateTime adoptionDate = DateTime.Parse(txtAdoptionDate.Text);
-                double adoptionFee=double.Parse(txtAdoptionFee.Text);
+                double adoptionFee = double.Parse(txtAdoptionFee.Text);
+                bool isReturn = isReturnCheck.Checked; // Add this line
 
-
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Adoption (adoption_id, animal_id, adoption_date, adoption_fee, owner_id) VALUES (@adoption_id, @animal_id, @adoption_date, @adoption_fee, @owner_id)", CN))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Adoption (adoption_id, animal_id, adoption_date, adoption_fee, owner_id, isReturn) VALUES (@adoption_id, @animal_id, @adoption_date, @adoption_fee, @owner_id, @isReturn)", CN))
                 {
                     cmd.Parameters.AddWithValue("@adoption_id", adoptionID); // Add this line
                     cmd.Parameters.AddWithValue("@animal_id", animalID);
                     cmd.Parameters.AddWithValue("@adoption_date", adoptionDate);
                     cmd.Parameters.AddWithValue("@adoption_fee", adoptionFee);
                     cmd.Parameters.AddWithValue("@owner_id", ownerID);
+                    cmd.Parameters.AddWithValue("@isReturn", isReturn); // Add this line
 
                     cmd.ExecuteNonQuery();
                 }
 
+                // Close the database connection
+                CN.Close();
 
+                this.Close();
             }
             catch (Exception ex)
             {

@@ -34,6 +34,7 @@
             this.txtAdoptionDate = new System.Windows.Forms.TextBox();
             this.txtAdoptionFee = new System.Windows.Forms.TextBox();
             this.submitAdoptionButton = new System.Windows.Forms.Button();
+            this.isReturnCheck = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtAnimalID
@@ -81,11 +82,22 @@
             this.submitAdoptionButton.UseVisualStyleBackColor = true;
             this.submitAdoptionButton.Click += new System.EventHandler(this.submitAdoptionButton_Click);
             // 
+            // isReturnCheck
+            // 
+            this.isReturnCheck.AutoSize = true;
+            this.isReturnCheck.Location = new System.Drawing.Point(249, 220);
+            this.isReturnCheck.Name = "isReturnCheck";
+            this.isReturnCheck.Size = new System.Drawing.Size(83, 19);
+            this.isReturnCheck.TabIndex = 6;
+            this.isReturnCheck.Text = "checkBox1";
+            this.isReturnCheck.UseVisualStyleBackColor = true;
+            // 
             // Adoption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.isReturnCheck);
             this.Controls.Add(this.submitAdoptionButton);
             this.Controls.Add(this.txtAdoptionFee);
             this.Controls.Add(this.txtAdoptionDate);
@@ -107,5 +119,6 @@
         private TextBox txtAdoptionDate;
         private TextBox txtAdoptionFee;
         private Button submitAdoptionButton;
+        private CheckBox isReturnCheck;
     }
 }

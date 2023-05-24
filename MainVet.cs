@@ -26,8 +26,8 @@ namespace VetCheck
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Return returnForm = new Return();
-            returnForm.Show();
+            addAnimal addAnimalForm = new addAnimal();
+            addAnimalForm.Show();
 
         }
 

@@ -35,7 +35,6 @@
             this.dgvAnimals = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvOwners = new System.Windows.Forms.DataGridView();
-            this.txtCheckAvailable = new System.Windows.Forms.TextBox();
             this.btnCheckAvailable = new System.Windows.Forms.Button();
             this.btnCancelApp = new System.Windows.Forms.Button();
             this.btnCheckAppDetails = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             this.txtCancelApp = new System.Windows.Forms.TextBox();
             this.txtCheckAppDetails = new System.Windows.Forms.TextBox();
             this.dgvAppointmentDetails = new System.Windows.Forms.DataGridView();
+            this.dtpCheckAvailableVet = new System.Windows.Forms.DateTimePicker();
             this.tabAppointments.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
@@ -130,13 +130,6 @@
             this.dgvOwners.Size = new System.Drawing.Size(762, 287);
             this.dgvOwners.TabIndex = 0;
             // 
-            // txtCheckAvailable
-            // 
-            this.txtCheckAvailable.Location = new System.Drawing.Point(39, 339);
-            this.txtCheckAvailable.Name = "txtCheckAvailable";
-            this.txtCheckAvailable.Size = new System.Drawing.Size(171, 23);
-            this.txtCheckAvailable.TabIndex = 1;
-            // 
             // btnCheckAvailable
             // 
             this.btnCheckAvailable.Location = new System.Drawing.Point(216, 339);
@@ -145,6 +138,7 @@
             this.btnCheckAvailable.TabIndex = 2;
             this.btnCheckAvailable.Text = "Check";
             this.btnCheckAvailable.UseVisualStyleBackColor = true;
+            this.btnCheckAvailable.Click += new System.EventHandler(this.btnCheckAvailable_Click);
             // 
             // btnCancelApp
             // 
@@ -225,11 +219,19 @@
             this.dgvAppointmentDetails.Size = new System.Drawing.Size(216, 118);
             this.dgvAppointmentDetails.TabIndex = 11;
             // 
+            // dtpCheckAvailableVet
+            // 
+            this.dtpCheckAvailableVet.Location = new System.Drawing.Point(39, 339);
+            this.dtpCheckAvailableVet.Name = "dtpCheckAvailableVet";
+            this.dtpCheckAvailableVet.Size = new System.Drawing.Size(171, 23);
+            this.dtpCheckAvailableVet.TabIndex = 12;
+            // 
             // Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 471);
+            this.Controls.Add(this.dtpCheckAvailableVet);
             this.Controls.Add(this.dgvAppointmentDetails);
             this.Controls.Add(this.txtCheckAppDetails);
             this.Controls.Add(this.txtCancelApp);
@@ -240,7 +242,6 @@
             this.Controls.Add(this.btnCheckAppDetails);
             this.Controls.Add(this.btnCancelApp);
             this.Controls.Add(this.btnCheckAvailable);
-            this.Controls.Add(this.txtCheckAvailable);
             this.Controls.Add(this.tabAppointments);
             this.Name = "Info";
             this.Text = "Info";
@@ -267,7 +268,6 @@
         private DataGridView dgvAppointments;
         private DataGridView dgvAnimals;
         private DataGridView dgvOwners;
-        private TextBox txtCheckAvailable;
         private Button btnCheckAvailable;
         private Button btnCancelApp;
         private Button btnCheckAppDetails;
@@ -278,5 +278,6 @@
         private TextBox txtCancelApp;
         private TextBox txtCheckAppDetails;
         private DataGridView dgvAppointmentDetails;
+        private DateTimePicker dtpCheckAvailableVet;
     }
 }

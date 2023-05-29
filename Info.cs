@@ -54,6 +54,10 @@ namespace VetCheck
 
         private void Info_Load(object sender, EventArgs e)
         {
+
+            dtpCheckAvailableVet.Format = DateTimePickerFormat.Custom;
+            dtpCheckAvailableVet.CustomFormat = "dd/MM/yyyy HH";
+
             LoadDataIntoDataGridView("Appointment", dgvAppointments);
             LoadDataIntoDataGridView("Animal", dgvAnimals);
             LoadDataIntoDataGridView("Owner", dgvOwners);
@@ -127,5 +131,36 @@ namespace VetCheck
         {
             LoadFilteredAppointments();
         }
+
+        private void btnCheckAvailable_Click(object sender, EventArgs e)
+        {
+            // Create a new SqlCommand object to execute the UDF
+            using (SqlCommand cmd = new SqlCommand("SELECT * FROM GetAvailableVeterinariansByTimeAndDate(@appointment_datetime)", CN))
+            {
+                // Set the command type to Text
+                cmd.CommandType = CommandType.Text;
+
+                // Add the parameter for the UDF
+                cmd.Parameters.Add(new SqlParameter("@appointment_datetime", SqlDbType.DateTime));
+                cmd.Parameters["@appointment_datetime"].Value = dtpCheckAvailableVet.Value;
+
+                // Execute the command and store the results in a DataTable
+                DataTable dt = new DataTable();
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    da.Fill(dt);
+                }
+
+                // Display the results in a pop-up window
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Available Veterinarians:");
+                foreach (DataRow row in dt.Rows)
+                {
+                    sb.AppendLine($"{row["vet_id"]}: {row["first_name"]} {row["last_name"]}");
+                }
+                MessageBox.Show(sb.ToString());
+            }
+        }
+
     }
 }

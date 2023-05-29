@@ -43,6 +43,9 @@
             this.btnUpForAdoption = new System.Windows.Forms.Button();
             this.btnCheckDiagnosis = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCancelApp = new System.Windows.Forms.TextBox();
+            this.txtCheckAppDetails = new System.Windows.Forms.TextBox();
+            this.dgvAppointmentDetails = new System.Windows.Forms.DataGridView();
             this.tabAppointments.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
@@ -50,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimals)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOwners)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointmentDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // tabAppointments
@@ -139,26 +143,28 @@
             this.btnCheckAvailable.Name = "btnCheckAvailable";
             this.btnCheckAvailable.Size = new System.Drawing.Size(75, 23);
             this.btnCheckAvailable.TabIndex = 2;
-            this.btnCheckAvailable.Text = "check";
+            this.btnCheckAvailable.Text = "Check";
             this.btnCheckAvailable.UseVisualStyleBackColor = true;
             // 
             // btnCancelApp
             // 
-            this.btnCancelApp.Location = new System.Drawing.Point(39, 368);
+            this.btnCancelApp.Location = new System.Drawing.Point(216, 368);
             this.btnCancelApp.Name = "btnCancelApp";
-            this.btnCancelApp.Size = new System.Drawing.Size(250, 25);
+            this.btnCancelApp.Size = new System.Drawing.Size(75, 25);
             this.btnCancelApp.TabIndex = 3;
             this.btnCancelApp.Text = "Cancel Appointment";
             this.btnCancelApp.UseVisualStyleBackColor = true;
+            this.btnCancelApp.Click += new System.EventHandler(this.btnCancelApp_Click);
             // 
             // btnCheckAppDetails
             // 
-            this.btnCheckAppDetails.Location = new System.Drawing.Point(39, 399);
+            this.btnCheckAppDetails.Location = new System.Drawing.Point(216, 399);
             this.btnCheckAppDetails.Name = "btnCheckAppDetails";
-            this.btnCheckAppDetails.Size = new System.Drawing.Size(250, 25);
+            this.btnCheckAppDetails.Size = new System.Drawing.Size(73, 25);
             this.btnCheckAppDetails.TabIndex = 4;
             this.btnCheckAppDetails.Text = "Check Details";
             this.btnCheckAppDetails.UseVisualStyleBackColor = true;
+            this.btnCheckAppDetails.Click += new System.EventHandler(this.btnCheckAppDetails_Click);
             // 
             // btnFutureOnly
             // 
@@ -168,37 +174,65 @@
             this.btnFutureOnly.TabIndex = 5;
             this.btnFutureOnly.Text = "Future Only";
             this.btnFutureOnly.UseVisualStyleBackColor = true;
+            this.btnFutureOnly.Click += new System.EventHandler(this.btnFutureOnly_Click);
             // 
             // btnUpForAdoption
             // 
-            this.btnUpForAdoption.Location = new System.Drawing.Point(297, 339);
+            this.btnUpForAdoption.Location = new System.Drawing.Point(531, 339);
             this.btnUpForAdoption.Name = "btnUpForAdoption";
             this.btnUpForAdoption.Size = new System.Drawing.Size(250, 25);
             this.btnUpForAdoption.TabIndex = 6;
             this.btnUpForAdoption.Text = "Up for Adoption";
             this.btnUpForAdoption.UseVisualStyleBackColor = true;
+            this.btnUpForAdoption.Click += new System.EventHandler(this.btnUpForAdoption_Click);
             // 
             // btnCheckDiagnosis
             // 
-            this.btnCheckDiagnosis.Location = new System.Drawing.Point(472, 370);
+            this.btnCheckDiagnosis.Location = new System.Drawing.Point(708, 371);
             this.btnCheckDiagnosis.Name = "btnCheckDiagnosis";
             this.btnCheckDiagnosis.Size = new System.Drawing.Size(75, 23);
             this.btnCheckDiagnosis.TabIndex = 8;
-            this.btnCheckDiagnosis.Text = "check";
+            this.btnCheckDiagnosis.Text = "Check";
             this.btnCheckDiagnosis.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(295, 370);
+            this.textBox1.Location = new System.Drawing.Point(531, 371);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(171, 23);
             this.textBox1.TabIndex = 7;
+            // 
+            // txtCancelApp
+            // 
+            this.txtCancelApp.Location = new System.Drawing.Point(39, 371);
+            this.txtCancelApp.Name = "txtCancelApp";
+            this.txtCancelApp.Size = new System.Drawing.Size(171, 23);
+            this.txtCancelApp.TabIndex = 9;
+            // 
+            // txtCheckAppDetails
+            // 
+            this.txtCheckAppDetails.Location = new System.Drawing.Point(39, 401);
+            this.txtCheckAppDetails.Name = "txtCheckAppDetails";
+            this.txtCheckAppDetails.Size = new System.Drawing.Size(171, 23);
+            this.txtCheckAppDetails.TabIndex = 10;
+            // 
+            // dgvAppointmentDetails
+            // 
+            this.dgvAppointmentDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAppointmentDetails.Location = new System.Drawing.Point(309, 337);
+            this.dgvAppointmentDetails.Name = "dgvAppointmentDetails";
+            this.dgvAppointmentDetails.RowTemplate.Height = 25;
+            this.dgvAppointmentDetails.Size = new System.Drawing.Size(216, 118);
+            this.dgvAppointmentDetails.TabIndex = 11;
             // 
             // Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 471);
+            this.Controls.Add(this.dgvAppointmentDetails);
+            this.Controls.Add(this.txtCheckAppDetails);
+            this.Controls.Add(this.txtCancelApp);
             this.Controls.Add(this.btnCheckDiagnosis);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnUpForAdoption);
@@ -218,6 +252,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimals)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOwners)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointmentDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +275,8 @@
         private Button btnUpForAdoption;
         private Button btnCheckDiagnosis;
         private TextBox textBox1;
+        private TextBox txtCancelApp;
+        private TextBox txtCheckAppDetails;
+        private DataGridView dgvAppointmentDetails;
     }
 }

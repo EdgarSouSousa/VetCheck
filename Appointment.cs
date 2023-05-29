@@ -38,6 +38,9 @@ namespace VetCheck
 
         private void Appointment_Load(object sender, EventArgs e)
         { // Populate treatments
+            dtpAppointmentDate.Format = DateTimePickerFormat.Custom;
+            dtpAppointmentDate.CustomFormat = "dd/MM/yyyy hh:mm";
+
             CN = getSGBDConnection();
             string sql = "SELECT treatment_id, name FROM Treatment";
             if (verifySGBDConnection())

@@ -90,6 +90,7 @@
             // 
             // dtpAppointmentDate
             // 
+            this.dtpAppointmentDate.CustomFormat = "";
             this.dtpAppointmentDate.Location = new System.Drawing.Point(112, 137);
             this.dtpAppointmentDate.Name = "dtpAppointmentDate";
             this.dtpAppointmentDate.Size = new System.Drawing.Size(200, 23);

@@ -39,7 +39,7 @@ namespace VetCheck
         private void Appointment_Load(object sender, EventArgs e)
         { // Populate treatments
             dtpAppointmentDate.Format = DateTimePickerFormat.Custom;
-            dtpAppointmentDate.CustomFormat = "dd/MM/yyyy hh:mm";
+            dtpAppointmentDate.CustomFormat = "dd/MM/yyyy HH";
 
             CN = getSGBDConnection();
             string sql = "SELECT treatment_id, name FROM Treatment";
@@ -136,12 +136,22 @@ namespace VetCheck
             {
                 using (SqlCommand command = new SqlCommand(sql, CN))
                 {
-                    command.Parameters.AddWithValue("@appointmentId", appointmentId); // Change parameter name to @appointmentId
+                    command.Parameters.AddWithValue("@appointmentId", appointmentId);
                     command.Parameters.AddWithValue("@animalId", animalId);
                     command.Parameters.AddWithValue("@vetId", vetId);
                     command.Parameters.AddWithValue("@appointmentDate", appointmentDate);
                     command.Parameters.AddWithValue("@appointmentReason", appointmentReason);
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        Console.WriteLine("Appointment Date: " + appointmentDate.ToString("dd/MM/yyyy HH:mm"));
+
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Failed to schedule the appointment: " + ex.Message, "Error", MessageBoxButtons.OK);
+                        return;
+                    }
                 }
             }
 

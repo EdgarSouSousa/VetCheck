@@ -41,7 +41,7 @@
             this.btnFutureOnly = new System.Windows.Forms.Button();
             this.btnUpForAdoption = new System.Windows.Forms.Button();
             this.btnCheckDiagnosis = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDiagnosisDetails = new System.Windows.Forms.TextBox();
             this.txtCancelApp = new System.Windows.Forms.TextBox();
             this.txtCheckAppDetails = new System.Windows.Forms.TextBox();
             this.dgvAppointmentDetails = new System.Windows.Forms.DataGridView();
@@ -188,13 +188,14 @@
             this.btnCheckDiagnosis.TabIndex = 8;
             this.btnCheckDiagnosis.Text = "Check";
             this.btnCheckDiagnosis.UseVisualStyleBackColor = true;
+            this.btnCheckDiagnosis.Click += new System.EventHandler(this.btnCheckDiagnosis_Click);
             // 
-            // textBox1
+            // txtDiagnosisDetails
             // 
-            this.textBox1.Location = new System.Drawing.Point(531, 371);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 23);
-            this.textBox1.TabIndex = 7;
+            this.txtDiagnosisDetails.Location = new System.Drawing.Point(531, 371);
+            this.txtDiagnosisDetails.Name = "txtDiagnosisDetails";
+            this.txtDiagnosisDetails.Size = new System.Drawing.Size(171, 23);
+            this.txtDiagnosisDetails.TabIndex = 7;
             // 
             // txtCancelApp
             // 
@@ -236,7 +237,7 @@
             this.Controls.Add(this.txtCheckAppDetails);
             this.Controls.Add(this.txtCancelApp);
             this.Controls.Add(this.btnCheckDiagnosis);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDiagnosisDetails);
             this.Controls.Add(this.btnUpForAdoption);
             this.Controls.Add(this.btnFutureOnly);
             this.Controls.Add(this.btnCheckAppDetails);
@@ -274,7 +275,7 @@
         private Button btnFutureOnly;
         private Button btnUpForAdoption;
         private Button btnCheckDiagnosis;
-        private TextBox textBox1;
+        private TextBox txtDiagnosisDetails;
         private TextBox txtCancelApp;
         private TextBox txtCheckAppDetails;
         private DataGridView dgvAppointmentDetails;

@@ -163,5 +163,21 @@ namespace VetCheck
             }
         }
 
+        private void btnCheckDiagnosis_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection()) return;
+
+            using (SqlCommand cmd = new SqlCommand("SELECT * FROM udf_FilterAnimalsByDiagnosis(@diagnosis_detail)", CN))
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@diagnosis_detail", txtDiagnosisDetails.Text);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvAnimals.DataSource = dt;
+            }
+        }
     }
 }

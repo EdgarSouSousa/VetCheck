@@ -31,7 +31,6 @@
             this.txtAnimalID = new System.Windows.Forms.TextBox();
             this.txtOwnerID = new System.Windows.Forms.TextBox();
             this.txtVetID = new System.Windows.Forms.TextBox();
-            this.txtAdoptionDate = new System.Windows.Forms.TextBox();
             this.txtAdoptionFee = new System.Windows.Forms.TextBox();
             this.submitAdoptionButton = new System.Windows.Forms.Button();
             this.isReturnCheck = new System.Windows.Forms.CheckBox();
@@ -41,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.newOwner = new System.Windows.Forms.LinkLabel();
+            this.dtpAdoptionDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // txtAnimalID
@@ -63,13 +63,6 @@
             this.txtVetID.Name = "txtVetID";
             this.txtVetID.Size = new System.Drawing.Size(196, 23);
             this.txtVetID.TabIndex = 2;
-            // 
-            // txtAdoptionDate
-            // 
-            this.txtAdoptionDate.Location = new System.Drawing.Point(249, 150);
-            this.txtAdoptionDate.Name = "txtAdoptionDate";
-            this.txtAdoptionDate.Size = new System.Drawing.Size(196, 23);
-            this.txtAdoptionDate.TabIndex = 3;
             // 
             // txtAdoptionFee
             // 
@@ -154,11 +147,19 @@
             this.newOwner.Text = "Novo Dono";
             this.newOwner.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newOwner_LinkClicked);
             // 
+            // dtpAdoptionDate
+            // 
+            this.dtpAdoptionDate.Location = new System.Drawing.Point(249, 150);
+            this.dtpAdoptionDate.Name = "dtpAdoptionDate";
+            this.dtpAdoptionDate.Size = new System.Drawing.Size(200, 23);
+            this.dtpAdoptionDate.TabIndex = 13;
+            // 
             // Adoption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dtpAdoptionDate);
             this.Controls.Add(this.newOwner);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -168,12 +169,12 @@
             this.Controls.Add(this.isReturnCheck);
             this.Controls.Add(this.submitAdoptionButton);
             this.Controls.Add(this.txtAdoptionFee);
-            this.Controls.Add(this.txtAdoptionDate);
             this.Controls.Add(this.txtVetID);
             this.Controls.Add(this.txtOwnerID);
             this.Controls.Add(this.txtAnimalID);
             this.Name = "Adoption";
             this.Text = "Adoption";
+            this.Load += new System.EventHandler(this.Adoption_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +185,6 @@
         private TextBox txtAnimalID;
         private TextBox txtOwnerID;
         private TextBox txtVetID;
-        private TextBox txtAdoptionDate;
         private TextBox txtAdoptionFee;
         private Button submitAdoptionButton;
         private CheckBox isReturnCheck;
@@ -194,5 +194,6 @@
         private Label label4;
         private Label label5;
         private LinkLabel newOwner;
+        private DateTimePicker dtpAdoptionDate;
     }
 }

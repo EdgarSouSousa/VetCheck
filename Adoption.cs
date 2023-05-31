@@ -60,7 +60,7 @@ namespace VetCheck
                 int animalID = int.Parse(txtAnimalID.Text);
                 int ownerID = int.Parse(txtOwnerID.Text);
                 int vetID = int.Parse(txtVetID.Text);
-                DateTime adoptionDate = DateTime.Parse(txtAdoptionDate.Text);
+                DateTime adoptionDate = dtpAdoptionDate.Value;
                 double adoptionFee = double.Parse(txtAdoptionFee.Text);
                 bool isReturn = isReturnCheck.Checked;
 
@@ -93,6 +93,11 @@ namespace VetCheck
         {
             Form ownerRegister= new ownerRegister();
             ownerRegister.Show();
+        }
+
+        private void Adoption_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

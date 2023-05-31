@@ -37,12 +37,12 @@ namespace VetCheck
             return CN.State == ConnectionState.Open;
         }
 
-        private void LoadDataIntoDataGridView(string tableName, DataGridView dataGridView)
+        private void LoadDataIntoDataGridView(string viewName, DataGridView dataGridView)
         {
             CN = getSGBDConnection();
             if (!verifySGBDConnection()) return;
 
-            using (SqlCommand cmd = new SqlCommand($"SELECT * FROM {tableName}", CN))
+            using (SqlCommand cmd = new SqlCommand($"SELECT * FROM {viewName}", CN))
             {
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -58,9 +58,9 @@ namespace VetCheck
             dtpCheckAvailableVet.Format = DateTimePickerFormat.Custom;
             dtpCheckAvailableVet.CustomFormat = "dd/MM/yyyy HH";
 
-            LoadDataIntoDataGridView("Appointment", dgvAppointments);
-            LoadDataIntoDataGridView("Animal", dgvAnimals);
-            LoadDataIntoDataGridView("Owner", dgvOwners);
+            LoadDataIntoDataGridView("vw_Appointments", dgvAppointments);
+            LoadDataIntoDataGridView("vw_Animals", dgvAnimals);
+            LoadDataIntoDataGridView("vw_Owners", dgvOwners);
         }
 
         private void btnUpForAdoption_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace VetCheck
         {
             if (!verifySGBDConnection()) return;
 
-            using (SqlCommand cmd = new SqlCommand("SELECT * FROM ufn_GetAppointmentDetails(@Appointment_id)", CN))
+            using (SqlCommand cmd = new SqlCommand("SELECT * FROM Details WHERE Appointment_id = @Appointment_id", CN))
             {
                 int appointmentId = Convert.ToInt32(txtCheckAppDetails.Text);
                 cmd.Parameters.AddWithValue("@Appointment_id", appointmentId);

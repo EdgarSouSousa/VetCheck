@@ -116,8 +116,9 @@ namespace VetCheck
         {
             if (!verifySGBDConnection()) return;
 
-            using (SqlCommand cmd = new SqlCommand("SELECT * FROM Appointment WHERE Appointment_Date > @CurrentDate", CN))
+            using (SqlCommand cmd = new SqlCommand("GetFilteredAppointments", CN))
             {
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@CurrentDate", DateTime.Now);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

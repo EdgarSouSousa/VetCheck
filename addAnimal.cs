@@ -40,9 +40,6 @@ namespace VetCheck
 
         private void btnAddAnimal_Click(object sender, EventArgs e)
         {
-
-
-
             // Read the values from the textboxes
             string name = txtName.Text;
             string species = txtSpecies.Text;
@@ -66,11 +63,11 @@ namespace VetCheck
                 animalID = (result != null) ? Convert.ToInt32(result) : 1;
             }
 
-            // Insert the animal into the database
-            string sql = "INSERT INTO Animal (animal_id, name, species, age, gender, weight) VALUES (@animalId, @name, @species, @age, @gender, @weight)";
-            using (SqlCommand command = new SqlCommand(sql, CN))
+            // Insert the animal into the database using the stored procedure
+            using (SqlCommand command = new SqlCommand("AddAnimal", CN))
             {
-                command.Parameters.AddWithValue("@animalId", animalID); // Get the next available animal ID
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@animal_id", animalID); // changed from "@animalId" to "@animal_id"
                 command.Parameters.AddWithValue("@name", name);
                 command.Parameters.AddWithValue("@species", species);
                 command.Parameters.AddWithValue("@age", age);
@@ -82,7 +79,6 @@ namespace VetCheck
             // Display a message box to indicate that the animal was added successfully and display its id
             MessageBox.Show("Animal added successfully", "Add Animal", MessageBoxButtons.OK);
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

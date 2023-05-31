@@ -62,18 +62,20 @@ namespace VetCheck
                 int vetID = int.Parse(txtVetID.Text);
                 DateTime adoptionDate = DateTime.Parse(txtAdoptionDate.Text);
                 double adoptionFee = double.Parse(txtAdoptionFee.Text);
-                bool isReturn = isReturnCheck.Checked; // Add this line
+                bool isReturn = isReturnCheck.Checked;
 
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Adoption (adoption_id, animal_id, adoption_date, adoption_fee, owner_id, isReturn) VALUES (@adoption_id, @animal_id, @adoption_date, @adoption_fee, @owner_id, @isReturn)", CN))
+                // Insert the adoption into the database using the stored procedure
+                using (SqlCommand command = new SqlCommand("InsertAdoption", CN))
                 {
-                    cmd.Parameters.AddWithValue("@adoption_id", adoptionID); // Add this line
-                    cmd.Parameters.AddWithValue("@animal_id", animalID);
-                    cmd.Parameters.AddWithValue("@adoption_date", adoptionDate);
-                    cmd.Parameters.AddWithValue("@adoption_fee", adoptionFee);
-                    cmd.Parameters.AddWithValue("@owner_id", ownerID);
-                    cmd.Parameters.AddWithValue("@isReturn", isReturn); // Add this line
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@adoption_id", adoptionID);
+                    command.Parameters.AddWithValue("@animal_id", animalID);
+                    command.Parameters.AddWithValue("@adoption_date", adoptionDate);
+                    command.Parameters.AddWithValue("@adoption_fee", adoptionFee);
+                    command.Parameters.AddWithValue("@owner_id", ownerID);
+                    command.Parameters.AddWithValue("@isReturn", isReturn);
 
-                    cmd.ExecuteNonQuery();
+                    command.ExecuteNonQuery();
                 }
 
                 // Close the database connection

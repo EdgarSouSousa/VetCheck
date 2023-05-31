@@ -86,9 +86,9 @@
             this.isReturnCheck.AutoSize = true;
             this.isReturnCheck.Location = new System.Drawing.Point(249, 220);
             this.isReturnCheck.Name = "isReturnCheck";
-            this.isReturnCheck.Size = new System.Drawing.Size(83, 19);
+            this.isReturnCheck.Size = new System.Drawing.Size(82, 19);
             this.isReturnCheck.TabIndex = 6;
-            this.isReturnCheck.Text = "checkBox1";
+            this.isReturnCheck.Text = "Devolução";
             this.isReturnCheck.UseVisualStyleBackColor = true;
             // 
             // label1

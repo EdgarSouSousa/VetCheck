@@ -68,8 +68,10 @@ namespace VetCheck
                 string email = txtEmail.Text;
 
                 // Insert the new entry into the Owner table
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Owner (owner_id, first_name, last_name, address, phone_number, email) VALUES (@owner_id, @first_name, @last_name, @address, @phone_number, @email)", CN))
+                using (SqlCommand cmd = new SqlCommand("AddOwner", CN))
                 {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.Parameters.AddWithValue("@owner_id", ownerID);
                     cmd.Parameters.AddWithValue("@first_name", firstName);
                     cmd.Parameters.AddWithValue("@last_name", lastName);

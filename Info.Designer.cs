@@ -134,9 +134,9 @@
             // 
             this.btnCheckAvailable.Location = new System.Drawing.Point(216, 339);
             this.btnCheckAvailable.Name = "btnCheckAvailable";
-            this.btnCheckAvailable.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckAvailable.Size = new System.Drawing.Size(104, 23);
             this.btnCheckAvailable.TabIndex = 2;
-            this.btnCheckAvailable.Text = "Check";
+            this.btnCheckAvailable.Text = "Check Available";
             this.btnCheckAvailable.UseVisualStyleBackColor = true;
             this.btnCheckAvailable.Click += new System.EventHandler(this.btnCheckAvailable_Click);
             // 
@@ -144,9 +144,9 @@
             // 
             this.btnCancelApp.Location = new System.Drawing.Point(216, 368);
             this.btnCancelApp.Name = "btnCancelApp";
-            this.btnCancelApp.Size = new System.Drawing.Size(75, 25);
+            this.btnCancelApp.Size = new System.Drawing.Size(104, 25);
             this.btnCancelApp.TabIndex = 3;
-            this.btnCancelApp.Text = "Cancel Appointment";
+            this.btnCancelApp.Text = "Cancel Aptmnt";
             this.btnCancelApp.UseVisualStyleBackColor = true;
             this.btnCancelApp.Click += new System.EventHandler(this.btnCancelApp_Click);
             // 
@@ -154,7 +154,7 @@
             // 
             this.btnCheckAppDetails.Location = new System.Drawing.Point(216, 399);
             this.btnCheckAppDetails.Name = "btnCheckAppDetails";
-            this.btnCheckAppDetails.Size = new System.Drawing.Size(73, 25);
+            this.btnCheckAppDetails.Size = new System.Drawing.Size(104, 25);
             this.btnCheckAppDetails.TabIndex = 4;
             this.btnCheckAppDetails.Text = "Check Details";
             this.btnCheckAppDetails.UseVisualStyleBackColor = true;
@@ -182,11 +182,11 @@
             // 
             // btnCheckDiagnosis
             // 
-            this.btnCheckDiagnosis.Location = new System.Drawing.Point(708, 371);
+            this.btnCheckDiagnosis.Location = new System.Drawing.Point(531, 401);
             this.btnCheckDiagnosis.Name = "btnCheckDiagnosis";
-            this.btnCheckDiagnosis.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckDiagnosis.Size = new System.Drawing.Size(250, 23);
             this.btnCheckDiagnosis.TabIndex = 8;
-            this.btnCheckDiagnosis.Text = "Check";
+            this.btnCheckDiagnosis.Text = "Check Diagnostic";
             this.btnCheckDiagnosis.UseVisualStyleBackColor = true;
             this.btnCheckDiagnosis.Click += new System.EventHandler(this.btnCheckDiagnosis_Click);
             // 
@@ -194,7 +194,7 @@
             // 
             this.txtDiagnosisDetails.Location = new System.Drawing.Point(531, 371);
             this.txtDiagnosisDetails.Name = "txtDiagnosisDetails";
-            this.txtDiagnosisDetails.Size = new System.Drawing.Size(171, 23);
+            this.txtDiagnosisDetails.Size = new System.Drawing.Size(250, 23);
             this.txtDiagnosisDetails.TabIndex = 7;
             // 
             // txtCancelApp
@@ -214,10 +214,10 @@
             // dgvAppointmentDetails
             // 
             this.dgvAppointmentDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointmentDetails.Location = new System.Drawing.Point(309, 337);
+            this.dgvAppointmentDetails.Location = new System.Drawing.Point(326, 337);
             this.dgvAppointmentDetails.Name = "dgvAppointmentDetails";
             this.dgvAppointmentDetails.RowTemplate.Height = 25;
-            this.dgvAppointmentDetails.Size = new System.Drawing.Size(216, 118);
+            this.dgvAppointmentDetails.Size = new System.Drawing.Size(199, 118);
             this.dgvAppointmentDetails.TabIndex = 11;
             // 
             // dtpCheckAvailableVet

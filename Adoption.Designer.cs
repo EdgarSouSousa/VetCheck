@@ -77,7 +77,7 @@
             this.submitAdoptionButton.Name = "submitAdoptionButton";
             this.submitAdoptionButton.Size = new System.Drawing.Size(175, 66);
             this.submitAdoptionButton.TabIndex = 5;
-            this.submitAdoptionButton.Text = "button1";
+            this.submitAdoptionButton.Text = "Submit";
             this.submitAdoptionButton.UseVisualStyleBackColor = true;
             this.submitAdoptionButton.Click += new System.EventHandler(this.submitAdoptionButton_Click);
             // 
